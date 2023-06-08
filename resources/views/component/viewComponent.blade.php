@@ -22,25 +22,20 @@
                     <td>{{$user->lastName}}</td>
                     <td>{{$user->email}}</td>
                     <td>{{$user->password}}</td>
-                <td>
-                    <a href="{{route("show",$user->id)}}">
-                        <button class="btn btn-primary">Edit</button>
-                    </a>
-                    <form id="delete" class="d-inline-block" action="{{route('delete',$user->id)}}" method="post">
-                        @method('DELETE')
-                        @csrf
-                        <input type="text" hidden name="user_id" value="{{$user->id}}">
-                        <button onclick="DeleteData()" class="btn btn-danger">Delete</button>
-                    </form>
-                </td>
+                    <td>
+                        <a href="{{route("show",$user->id)}}">
+                            <button class="btn btn-primary">Edit</button>
+                        </a>
+                        <form id="delete" class="d-inline-block" action="{{route('delete',$user->id)}}" method="post" onsubmit="return  confirm('Do you want to delete?')">
+                            @method('DELETE')
+                            @csrf
+                            <input type="text" hidden name="user_id" value="{{$user->id}}">
+                            <button  class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
                 </tr>
             </tbody>
         @endforeach
     </table>
-    <script>
-        function DeleteData(){
-            document.getElementById('delete').innerHTML(alert("Do you want to delete data!!"));
-        }
-    </script>
 </div>
 

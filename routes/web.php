@@ -15,4 +15,3 @@ Route::get('/show/{user_id}',[users::class,'show'])->name('show');
 
 Route::post('/update',[users::class,'update'])->name('update');
 Route::delete('/delete',[users::class,'destroy'])->name('delete');
-
