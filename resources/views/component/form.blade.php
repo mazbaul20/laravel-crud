@@ -1,6 +1,6 @@
 <div class="col-8 mt-5 center">
     <h2 class="text-center">Create Data</h2>
-    <form action="{{route('store')}}" method="POST">
+    <form action="{{ route('store') }}" method="POST">
         <label for="fname">First Name</label>
         <input class="form-control mb-2" type="text" id="fname" name="fname" placeholder="first name">
         <label for="lname">Last Name</label>
